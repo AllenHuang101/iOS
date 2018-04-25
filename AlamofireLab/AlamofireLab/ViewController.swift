@@ -16,7 +16,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         //getItunesData1()
-        getItunesData2()
+        //getItunesData2()
+        postApiTest()
     }
 
     func getItunesData1(){
@@ -55,6 +56,20 @@ class ViewController: UIViewController {
         }
     }
     
+    func postApiTest(){
+        
+        let params = ["name": "penny", "grade":"77"]
+        
+        Alamofire.request("https://httpbin.org/post", method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { (response) in
+            if response.result.isSuccess {
+                print(response.result.value)
+            }else{
+                print("Error")
+            }
+        }
+       
+      
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
