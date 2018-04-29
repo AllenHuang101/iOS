@@ -1,0 +1,6 @@
+framework module Pods_ScrollViewLab {
+  umbrella header "Pods-ScrollViewLab-umbrella.h"
+
+  export *
+  module * { export * }
+}
